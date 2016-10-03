@@ -1,8 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Display/GBRender.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Generation/Parser/LevelImages.cs">
     <Files>
+      <File FileName="Assets/Scripts/Generation/Entities/SectionCoord.cs" Line="7" Column="9" />
       <File FileName="Assets/Scripts/Display/GBRender.cs" Line="4" Column="1" />
+      <File FileName="Assets/Scripts/Generation/Entities/DungeonSection.cs" Line="21" Column="26" />
+      <File FileName="Assets/Scripts/Generation/Entities/Dungeon.cs" Line="15" Column="1" />
+      <File FileName="Assets/Scripts/Generation/Parser/ImageToDungeon.cs" Line="37" Column="48" />
+      <File FileName="Assets/Scripts/Generation/Entities/SectionDoors.cs" Line="16" Column="2" />
+      <File FileName="Assets/Scripts/Generation/LevelBuilder.cs" Line="19" Column="3" />
+      <File FileName="Assets/Scripts/Generation/Parser/LevelImages.cs" Line="20" Column="135" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

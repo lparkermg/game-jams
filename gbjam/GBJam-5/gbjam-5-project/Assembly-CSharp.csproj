@@ -46,6 +46,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Display\GBRender.cs" />
+     <Compile Include="Assets\Scripts\Generation\Entities\Dungeon.cs" />
+     <Compile Include="Assets\Scripts\Generation\Entities\DungeonSection.cs" />
+     <Compile Include="Assets\Scripts\Generation\Entities\SectionCoord.cs" />
+     <Compile Include="Assets\Scripts\Generation\Entities\SectionDoors.cs" />
+     <Compile Include="Assets\Scripts\Generation\LevelBuilder.cs" />
+     <Compile Include="Assets\Scripts\Generation\Parser\ImageToDungeon.cs" />
+     <Compile Include="Assets\Scripts\Generation\Parser\LevelImages.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
