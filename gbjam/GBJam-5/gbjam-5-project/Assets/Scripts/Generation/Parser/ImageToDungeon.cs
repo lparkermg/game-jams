@@ -30,36 +30,36 @@ public static class ImageToParser{
 		_initialized = true;
 	}
 
-	public static DungeonSection ToDungeon(Texture2D tileMap, Texture2D itemMap, bool spawn, int x, int y){
+	public static DungeonSection ToDungeon(Texture2D tileMap, Texture2D itemMap, bool spawn, int x, int y, string edge){
 		var tiles = ParseTileMap (tileMap);
 		var items = ParseItemMap (itemMap);
-		var doors = CheckDoors (tiles);
-		return new DungeonSection (itemMap, tileMap, doors, new SectionCoord (x, y), spawn);
+		var doors = CheckDoors (tiles,edge);
+		return new DungeonSection (items, tiles, doors, new SectionCoord (x, y), spawn);
 	}
 
-	private static SectionDoors CheckDoors(int[,] tileMap){
+	private static SectionDoors CheckDoors(int[,] tileMap, string edge){
 		var doors = new SectionDoors(false,false,false,false);
 
 		for(var x = 0; x < Width;x++){
-			if(tileMap[x,Height - 1] == 3){
+			if(tileMap[x,Height - 1] == 3 && edge.Contains("north")){
 				doors.NorthExit = true;
 			}
 		}
 
 		for(var y = 0; y < Height; y++){
-			if(tileMap[Width - 1,y] == 3){
+			if(tileMap[Width - 1,y] == 3 && edge.Contains("east")){
 				doors.EastExit = true;
 			}
 		}
 
 		for(var y = 0; y < Height; y++){
-			if(tileMap[0,y] == 3){
+			if(tileMap[0,y] == 3 && edge.Contains("south")){
 				doors.SouthExit = true;
 			}
 		}
 			
 		for(var x = 0; x < Width; x++){
-			if(tileMap[x,0] == 3){
+			if(tileMap[x,0] == 3 && edge.Contains("west")){
 				doors.WestExit = true;
 			}
 		}
@@ -93,28 +93,26 @@ public static class ImageToParser{
 
 	private static int ColourToNumber(Color pixelColour, bool isItem){
 		if(!isItem){
-			switch(pixelColour){
-			case(Color.white):
+			if (pixelColour == Color.white) {
 				return 0;
-			case(Color.black):
+			} else if (pixelColour == Color.black) {
 				return 1;
-			case(Color.red):
+			} else if (pixelColour == Color.red) {
 				return 2;
-			case(Color.blue):
+			} else if (pixelColour == Color.blue) {
 				return 3;
-			default:
+			}else {
 				return 0;
 			}
 		}
 		else{
-			switch(pixelColour){
-			case(Color.white):
+			if (pixelColour == Color.white) {
 				return 0;
-			case(Color.black):
+			} else if (pixelColour == Color.black) {
 				return 1;
-			case(Color.red):
+			} else if (pixelColour == Color.red) {
 				return 2;
-			default:
+			} else {
 				return 0;
 			}
 		}
